@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Admin User</title>
+</head>
+<body>
+    <h1>Admin User Creation</h1>
+    <p>Click the button below to create an admin user:</p>
+    <button onclick="createAdmin()">Create Admin User</button>
+    <p>After clicking, you can login with:</p>
+    <ul>
+        <li>Email: admin@example.com</li>
+        <li>Password: admin123</li>
+    </ul>
+    <script>
+        function createAdmin() {
+            const adminUser = {
+                id: "1",
+                name: "Admin",
+                email: "admin@example.com",
+                password: "admin123",
+                joinDate: new Date().toISOString(),
+                isAdmin: true
+            };
+            localStorage.setItem("users", JSON.stringify([adminUser]));
+            alert("Admin user created successfully! You can now login with admin@example.com / admin123");
+        }
+    </script>
+</body>
+</html> 
